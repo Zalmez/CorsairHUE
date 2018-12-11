@@ -11,7 +11,7 @@ namespace CorsairHUE
 {
     class HUEControl
     {
-        //gE-MPDaj7yN606rlKmva6vBpWf2r8vukskbkj04e
+        //TODO: Do the bride management
 
     }
 }

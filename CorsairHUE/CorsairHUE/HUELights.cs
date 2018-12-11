@@ -1,39 +1,39 @@
 ﻿using System;
+using System.ServiceProcess;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Http;
+using Q42.HueApi;
 
 namespace CorsairHUE
 {
     class HUELights
     {
-        config info = new config();
+        
 
-        void getState()
+        
+        
+
+        //TODO: Control lights
+        private void windowsLogin(string color)
         {
-            WebClient c = new WebClient();
-            var data = c.DownloadString("http://192.168.1.147/api/gE-MPDaj7yN606rlKmva6vBpWf2r8vukskbkj04e/lights/2/");
-            JObject o = JObject.Parse(data);
-            Console.WriteLine("State: " + o["state"]);
+            var command = new LightCommand();
+            command.On = true;
+            
         }
 
-        void SendJSONData(string body, string target)
+        private void windowsLock()
         {
-            var RequestWeb = (HttpWebRequest)WebRequest.Create("http://http://192.168.1.147/api/"+target);
-            RequestWeb.ContentType = "application/json";
-            RequestWeb.Method = "POST";
+            var command = new LightCommand();
+            command.TurnOff();
         }
 
-        
-
-        
-
-        
-
+        public void changeLightState()
+        {
+            
+            
+        }
 
     }
 }
